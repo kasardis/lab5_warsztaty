@@ -1,6 +1,6 @@
-CXX=g++
-CXXFLAGS=-Wall -fsanitize=address,leak -g
-LINKFLAGS=-fsanitize=address,leak -g
+CXX=clang++
+CXXFLAGS=-Wall -fsanitize=address -g
+LINKFLAGS=-fsanitize=address -g
 
 .PHONY: all clean
 

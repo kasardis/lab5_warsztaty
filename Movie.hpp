@@ -30,28 +30,28 @@ class Movie{
         Movie(std::string title, int year, std::variant<Director, std::string> director, std::optional<std::string> description = std::nullopt) : 
             title{title}, year{year}, director{director}, description{description} {}
 
-        std::string getTitle(){
+        std::string getTitle() const{
             return this->title;
         }
 
-        int getYear(){
+        int getYear() const{
             return this->year;
         }
 
-        std::optional<std::string> getDescription(){
+        std::optional<std::string> getDescription() const{
             return this->description;
         }
 
-        std::variant<Director, std::string> getDirector(){
+        std::variant<Director, std::string> getDirector() const{
             return this->director;
         }
 
-        std::list<RatingType> getRatings(){
+        std::list<RatingType> getRatings() const{
             return this->ratings;
         }
 
-        RatingType getAverageRating(){
-            RatingType sum;
+        RatingType getAverageRating() const{
+            RatingType sum = 0;
             int counter = 0;
             for(RatingType rating : this->ratings){
                 sum += rating;
@@ -63,7 +63,7 @@ class Movie{
             return sum/RatingType(counter);
         }
 
-        RatingType getTopRating(){
+        RatingType getTopRating() const{
             RatingType max = RatingType(0);
             for(RatingType rating : this->ratings){
                 if(rating > max){
@@ -73,14 +73,14 @@ class Movie{
             return max;
         }
 
-        bool operator<(Movie& other){
+        bool operator<(const Movie& other) const{
             if(this->title == other.getTitle()){
                 return this->year < other.getYear();
             }
             return this->title < other.getTitle();
         }
 
-        bool operator==(Movie& other){
+        bool operator==(const Movie& other) const{
             return this->title == other.getTitle() && this->year == other.getYear();
         }
 
@@ -92,7 +92,7 @@ class Movie{
 };
 
 template<typename RatingType>
-std::ostream& operator<<(std::ostream& os, Movie<RatingType>& movie){
+std::ostream& operator<<(std::ostream& os, const Movie<RatingType>& movie){
     os << movie.getTitle() << " (" << movie.getYear() << "), Director: ";
     if(std::holds_alternative<std::string>(movie.getDirector())){
         os << std::get<std::string>(movie.getDirector());

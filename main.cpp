@@ -76,7 +76,7 @@ int main() {
     }
     
     std::cout << "\n*************** PART 3 (MovieCollection) ***************\n\n";
-    /*
+    
     MovieCollection collection;
 
     Movie<double> dunkirk("Dunkirk", 2017, director1);
@@ -107,7 +107,7 @@ int main() {
 
     auto allMovies = collection.getAllMovies();
     std::cout << "Total number of movies: " << allMovies.size() << "\n\n";
-
+    
     std::cout << "Movies under letter 'I':\n";
     auto it = collection.getMoviesByLetter().find('I');
     if (it != collection.getMoviesByLetter().end()) {
@@ -115,7 +115,7 @@ int main() {
             std::cout << movie << "\n";
         }
     }
-    */
+    
     std::cout << "\n*************** PART 4 (MovieCollection  - additional functionality) ***************\n\n";
     /*
     auto foundMovie = collection.findMovieWithAverageAbove(8.0);
