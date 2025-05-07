@@ -117,36 +117,36 @@ int main() {
     }
     
     std::cout << "\n*************** PART 4 (MovieCollection  - additional functionality) ***************\n\n";
-    /*
+    
     auto foundMovie = collection.findMovieWithAverageAbove(8.0);
     if (foundMovie) {
         std::cout << "Found a movie with average rating above 8.0:\n" << *foundMovie << "\n";
     } else {
         std::cout << "No movie found with average rating above 8.0.\n";
     }
-
+    
     collection.sortMovies();
     std::cout << "\nMovies after sorting:\n";
     std::cout << collection << "\n";
-
+    
     collection.removeMoviesOlderThan('I', 2015);
     std::cout << "Movies after removing movies before 2015 under letter 'I':\n";
     std::cout << collection << "\n";
-
+    
     double averageTop = collection.getAverageTopRating();
     std::cout << "Average of top ratings across all movies: " << averageTop << "\n";
-
+    
     auto nolanMovies = collection.getMoviesByDirector("Christopher Nolan");
     std::cout << "\nMovies directed by Christopher Nolan:\n";
     for (const auto& movie : nolanMovies) {
         std::cout << movie << "\n";
     }
-
+    
     auto andersonMovies = collection.getMoviesByDirector("Wes Anderson");
     std::cout << "\nMovies directed by Wes Anderson:\n";
     for (const auto& movie : andersonMovies) {
         std::cout << movie << "\n";
     }
-    */
+    
     return 0;
 }
